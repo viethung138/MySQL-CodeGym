@@ -1,0 +1,34 @@
+CREATE DATABASE QuanLyBanHang;
+
+USE QuanLyBanHang;
+
+CREATE TABLE Customer(
+	cID VARCHAR(20) PRIMARY KEY,
+    cName VARCHAR(20) NOT NULL,
+    cAge INT,
+    CONSTRAINT CHK_Age_Customer CHECK (cAge > 0)
+);
+
+CREATE TABLE `Order`(
+	oID VARCHAR(20) PRIMARY KEY,
+    cID VARCHAR(20),
+    oDate DATETIME NOT NULL,
+    oTotalPrice DECIMAL(18, 2),
+    CONSTRAINT FK_Order_Customer FOREIGN KEY (cID) REFERENCES Customer (cID)
+);
+
+CREATE TABLE Product(
+	pID VARCHAR(20) PRIMARY KEY,
+    pName VARCHAR(20) NOT NULL,
+    pPrice DECIMAL(18, 2) NOT NULL
+);
+
+CREATE TABLE OrderDetail(
+	oID VARCHAR(20),
+    pID VARCHAR(20),
+    odQTY INT NOT NULL,
+    PRIMARY KEY (oID, pID),
+	CONSTRAINT CHK_OrderDetail_odQTY CHECK (odQTY > 0),
+    CONSTRAINT FK_OrderDetail_Order FOREIGN KEY (oID) REFERENCES `Order` (oID),
+    CONSTRAINT FK_OrderDetail_Product FOREIGN KEY (pID) REFERENCES Product (pID)
+);
