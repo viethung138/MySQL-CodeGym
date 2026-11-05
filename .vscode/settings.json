@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "**/*.sql": true,
+    "**/*.docx": true,
+    "**/*.md": true
+  }
+}
