@@ -1,0 +1,143 @@
+/* Cuộn trang mượt mà khi bấm liên kết mục lục */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #2d3748;
+    margin: 0;
+    padding: 30px 15px;
+    line-height: 1.8;
+}
+
+/* Khung bọc toàn bộ trang đọc truyện */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Phần đầu trang chứa ảnh và tiêu đề */
+.story-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Bước 4: Ảnh truyện đặt ở đầu trang */
+.story-banner {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-title {
+    font-size: 32px;
+    color: #1a365d;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.story-author {
+    font-size: 15px;
+    color: #718096;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Bước 1 & Bước 5: Mục lục truyện sử dụng thẻ <h5> */
+.table-of-contents {
+    background-color: #f7fafc;
+    border-left: 5px solid #3182ce;
+    border-radius: 6px;
+    padding: 20px 25px;
+    margin-bottom: 35px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.03);
+}
+
+.table-of-contents h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #2b6cb0;
+    font-size: 19px;
+}
+
+/* Định dạng thẻ <h5> cho từng mục lục */
+.table-of-contents h5 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+    padding-left: 8px;
+}
+
+/* Liên kết của từng mục lục */
+.table-of-contents h5 a {
+    color: #2b6cb0;
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+}
+
+.table-of-contents h5 a:hover {
+    color: #1a365d;
+    text-decoration: underline;
+    padding-left: 6px;
+}
+
+/* Bước 2: Nội dung truyện */
+.story-chapter {
+    padding-top: 15px;
+    margin-bottom: 35px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 20px;
+}
+
+.story-chapter h2 {
+    color: #2c5282;
+    font-size: 22px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #ebf8ff;
+    padding-bottom: 8px;
+}
+
+.story-chapter p {
+    font-size: 16.5px;
+    text-align: justify;
+    text-indent: 30px;
+    margin: 14px 0;
+    color: #2d3748;
+}
+
+/* Nút liên kết quay lại mục lục */
+.back-to-toc {
+    display: block;
+    text-align: right;
+    font-size: 13.5px;
+    color: #718096;
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+.back-to-toc:hover {
+    color: #3182ce;
+    text-decoration: underline;
+}
+
+/* Chân trang */
+.story-footer {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #edf2f7;
+}
+
